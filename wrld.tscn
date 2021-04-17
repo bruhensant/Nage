@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Label.gd" type="Script" id=1]
+[ext_resource path="res://Kenney Mini.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Título.gd" type="Script" id=3]
+[ext_resource path="res://Texto.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+use_mipmaps = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Programa" type="Node2D"]
+
+[node name="Fundo_Janela" type="Panel" parent="."]
+margin_right = 400.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fundo_Cor" type="ColorRect" parent="Fundo_Janela"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 3.05176e-05
+color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nome2" type="Label" parent="Fundo_Janela"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 200.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texto" type="Label" parent="Fundo_Janela"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -163.0
+margin_top = -98.0
+margin_right = 163.0
+margin_bottom = -48.0
+custom_fonts/font = SubResource( 1 )
+text = "Aperte ESPAÇO para gerar um nome"
+align = 1
+valign = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Título" type="Control" parent="."]
+margin_right = 400.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fundo_Título" type="ColorRect" parent="Título"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Versão" type="Label" parent="Título"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 12.0
+margin_top = -11.0
+margin_right = 49.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "v1.0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fechar" type="Button" parent="Título"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -79.0
+margin_top = -13.0
+margin_right = -7.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 2 )
+action_mode = 0
+text = "Fechar"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="Título" to="Título" method="_on_Ttulo_gui_input"]
+[connection signal="pressed" from="Título/Fechar" to="Título" method="_on_Fechar_pressed"]
