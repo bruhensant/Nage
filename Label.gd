@@ -23,7 +23,5 @@ func _input(_event):
 func _ready():
 	randomize()
 
-
 func _on_Nome_pressed():
 	OS.set_clipboard(nome.capitalize())
-	pass
