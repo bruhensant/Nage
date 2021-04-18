@@ -8,8 +8,8 @@ var nome = ''
 func gerar_nome():
 	var nome_gerado = ''
 	for i in 1+(randi() % 2 + 1):
-		var complemento = bool(randi() % 1)
-		if complemento:
+		var complemento = bool(randi() % 2)
+		if !complemento:
 			nome_gerado += consoantes[randi() % consoantes.size()] + vogais[randi() % vogais.size()]
 		else:
 			nome_gerado += consoantes[randi() % consoantes.size()] + vogais[randi() % vogais.size()] + complementares[randi() % complementares.size()]
