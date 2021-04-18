@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Label.gd" type="Script" id=1]
 [ext_resource path="res://Kenney Mini.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,27 @@
 size = 18
 use_mipmaps = true
 font_data = ExtResource( 2 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+func _input(_event):
+	if Input.is_action_pressed(\"ui_accept\"):
+		queue_free()
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
@@ -46,6 +67,9 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Gerar_Texto" type="Label" parent="Fundo_Janela"]
 anchor_left = 0.5
@@ -60,6 +84,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Aperte ESPAÇO para gerar um nome."
 align = 1
 valign = 1
+script = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
