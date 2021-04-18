@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="o drolhos"
+config/description="Geradir de nomes para RPG"
 run/main_scene="res://wrld.tscn"
 boot_splash/image="res://splash.png"
 boot_splash/use_filter=false
@@ -28,3 +29,7 @@ window/size/width=400
 window/size/height=400
 window/size/resizable=false
 window/size/borderless=true
+
+[rendering]
+
+environment/default_clear_color=Color( 0.133333, 0.133333, 0.133333, 1 )
