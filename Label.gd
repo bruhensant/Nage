@@ -5,7 +5,7 @@ var vogais = ['a','e','i','o','u', 'y']
 var complementares = ['a','e','h','i','k','l','n','o','r','s','u']
 var nome = ''
 
-func nome():
+func gerar_nome():
 	var nome_gerado = ''
 	for i in 1+(randi() % 2 + 1):
 		var complemento = bool(randi() % 1)
@@ -17,7 +17,7 @@ func nome():
 
 func _input(_event):
 	if Input.is_action_pressed("ui_accept"):
-		nome = nome()
+		nome = gerar_nome()
 		set_text(nome)
 
 func _ready():
